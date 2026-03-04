@@ -3,83 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holi 2026 | Adarsh</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <title>Holi 2026 | Adarsh Special</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #ff4081; --secondary-color: #7c4dff; }
-        body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #0a0a0a; color: #fff; font-family: 'Poppins', sans-serif; overflow: hidden; text-align: center; }
-        
-        .container { z-index: 10; padding: 30px; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8); max-width: 450px; width: 90%; position: relative; }
-        
-        h1 { font-size: 2.8rem; margin-bottom: 5px; background: linear-gradient(to right, #ff0080, #7928ca, #00dfd8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: hue 4s infinite linear; }
-        
-        @keyframes hue { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #050505;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
 
-        /* Lyrics Styling */
-        #lyrics-container { margin: 20px 0; min-height: 60px; font-style: italic; color: #ffeb3b; font-size: 1.2rem; text-shadow: 0 0 10px rgba(255, 235, 59, 0.5); transition: opacity 0.5s ease; opacity: 0; }
-        
-        .signature { margin-top: 25px; font-family: 'Caveat', cursive; font-size: 2.5rem; color: #00dbde; }
-        
-        .btn { margin-top: 10px; padding: 15px 35px; border: none; border-radius: 50px; background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%); color: white; font-weight: bold; font-size: 1rem; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(245, 87, 108, 0.6); }
+        /* Animated Background Gradients */
+        .bg-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #7c4dff33 0%, transparent 50%),
+                        radial-gradient(circle at 10% 10%, #ff408122 0%, transparent 40%);
+            z-index: -1;
+            animation: moveGlow 10s infinite alternate;
+        }
+
+        @keyframes moveGlow {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ff0080, #7928ca, #ff0080);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 3s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            to { background-position: 200% center; }
+        }
+
+        /* Sync Lyrics Styling */
+        #lyrics {
+            height: 80px;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #eee;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .highlight {
+            color: #ffeb3b;
+            font-weight: 800;
+            transform: scale(1.1);
+        }
+
+        .btn {
+            background: #fff;
+            color: #000;
+            padding: 16px 35px;
+            border-radius: 100px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .signature {
+            font-family: 'Caveat', cursive;
+            font-size: 2.2rem;
+            margin-top: 30px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
 
-    <audio id="holiSong">
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+<div class="bg-glow"></div>
 
-    <div class="container">
-        <h1>Happy Holi 2026</h1>
+<div class="card">
+    <h1>HOLI 2026</h1>
+    <div id="lyrics">Ready for the vibe?</div>
+    <button class="btn" id="playBtn" onclick="init()">Start Magic</button>
+    <div class="signature">Adarsh</div>
+</div>
+
+<audio id="track" src="music.mp3"></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    const audio = document.getElementById('track');
+    const lyricsEl = document.getElementById('lyrics');
+    
+    // Yahan timings (seconds) adjust kar sakte ho gaane ke hisaab se
+    const syncData = [
+        { start: 0.1, text: "Itna maza kyun aa raha hai..." },
+        { start: 3.5, text: "Tune hawa mein <span class='highlight'>bhaang</span> milaya!" },
+        { start: 7.0, text: "Dugna nasha kyun ho raha hai..." },
+        { start: 10.5, text: "Aakhon se meetha tune khilaya!" },
+        { start: 14.0, text: "Balam pichkari..." },
+        { start: 16.5, text: "Jo tune mujhe maari!" },
+        { start: 19.0, text: "Toh seedhi saadi chhori..." },
+        { start: 22.0, text: "<span class='highlight'>SHARABI</span> ho gayi!" }
+    ];
+
+    function init() {
+        audio.play();
+        document.getElementById('playBtn').style.display = 'none';
         
-        <div id="lyrics-container">Click below to start the vibe!</div>
+        // Loop for sync
+        requestAnimationFrame(updateLyrics);
+        
+        // Continuous Confetti
+        setInterval(() => {
+            confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 } });
+            confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 } });
+        }, 500);
+    }
 
-        <button id="mainBtn" class="btn" onclick="startVibe()">Rang Barsao! 🌈</button>
+    function updateLyrics() {
+        const currentTime = audio.currentTime;
+        const currentLine = syncData.find((line, index) => {
+            const nextLine = syncData[index + 1];
+            return currentTime >= line.start && (!nextLine || currentTime < nextLine.start);
+        });
 
-        <div class="signature">— Adarsh</div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script>
-        const lyrics = [
-            "Itna maza kyu aa raha hai...",
-            "Tune hawa mein bhaang milaya! 🎵",
-            "Dugna nasha kyu ho raha hai...",
-            "Aakhon se meetha tune khilaya! 🍬",
-            "Balam pichkari jo tune mujhe maari...",
-            "Toh seedhi saadi chhori sharabi ho gayi! 💃"
-        ];
-
-        let lyricIndex = 0;
-
-        function startVibe() {
-            const audio = document.getElementById('holiSong');
-            const lyricBox = document.getElementById('lyrics-container');
-            const btn = document.getElementById('mainBtn');
-            
-            audio.play();
-            btn.style.display = 'none'; // Button hide kar diya
-            lyricBox.style.opacity = '1';
-
-            // Lyrics cycle
-            setInterval(() => {
-                lyricBox.style.opacity = '0';
-                setTimeout(() => {
-                    lyricBox.innerText = lyrics[lyricIndex];
-                    lyricBox.style.opacity = '1';
-                    lyricIndex = (lyricIndex + 1) % lyrics.length;
-                }, 500);
-            }, 3000);
-
-            // Endless Confetti
-            var end = Date.now() + (30 * 1000);
-            (function frame() {
-                confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ff0080', '#ffff00'] });
-                confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#00dfd8', '#7928ca'] });
-                if (Date.now() < end) requestAnimationFrame(frame);
-            }());
+        if (currentLine && lyricsEl.innerHTML !== currentLine.text) {
+            lyricsEl.style.opacity = 0;
+            setTimeout(() => {
+                lyricsEl.innerHTML = currentLine.text;
+                lyricsEl.style.opacity = 1;
+            }, 200);
         }
-    </script>
+        requestAnimationFrame(updateLyrics);
+    }
+</script>
 </body>
 </html>
